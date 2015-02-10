@@ -1,12 +1,20 @@
-<h1>Questions#index</h1>
 
+
+<h2>Open Questions</h2>
 <div class="media">
   <div class="media-body">
     <div class="media-heading">
 
-      <table class="table table-striped">
         <% @opened.each do |q| %>
-          <tr><td><%= link_to q.questions, q %></td></tr>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= link_to q.questions, q %> &nbsp; &nbsp; &nbsp;<%= link_to "Edit", edit_question_path(q), align:"right" %></h3> 
+          </div>
+    <div class="panel-body">
+        Answer would go here or form
+    </div>
+  </div>
+
         <% end %>
       </table>
 
@@ -14,16 +22,32 @@
   </div
 </div>
 
+<h2> Solved Questions</h2>
 <div class="media">
   <div class="media-body">
     <div class="media-heading">
 
-      <table class="table table-striped">
-        <% @solved.each do |q| %>
-          <tr><td><%= link_to q.questions, q %></td></tr>
-        <% end %>
-      </table>
+      
+
+  
+  <% @solved.each do |q| %>
+
+  <div class="panel panel-success">
+    <div class="panel-heading">
+          <h3 class="panel-title"><%= link_to q.questions, q %></h3>
+    </div>
+    <div class="panel-body">
+        Answer would go here or form
+    </div>
+  </div>
+  <% end %>
 
     </div>  
   </div
 </div>
+
+
+
+
+
+

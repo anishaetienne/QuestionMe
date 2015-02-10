@@ -1,25 +1,27 @@
 require 'faker'
 
 #Create Questions
-5.times do
-  Question.create!(
-    questions: Faker::Lorem.sentence,
-    status: Faker::Lorem.word)
-end
+#5.times do
+#  Question.create!(
+#    questions: Faker::Lorem.sentence,
+#    status: Faker::Lorem.word)
+#end
+questions = Question.all
   
 #Create Answers
 
 20.times do
   Answer.create!(
+    question: questions.sample,
     answers: Faker::Lorem.paragraph)
 end
 
-30.times do
-  Tag.create!(
-    name: Faker::Lorem.word)
-end
+#30.times do
+#  Tag.create!(
+#    name: Faker::Lorem.word)
+#end
 
 puts "Seed finished!!!"
-puts "#{Question.count} questions created"
+#puts "#{Question.count} questions created"
 puts "#{Answer.count} answers created"
-puts "#{Tag.count} tags created"
+#puts "#{Tag.count} tags created"
