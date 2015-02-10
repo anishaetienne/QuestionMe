@@ -1,0 +1,29 @@
+<h1>Questions#index</h1>
+
+<div class="media">
+  <div class="media-body">
+    <div class="media-heading">
+
+      <table class="table table-striped">
+        <% @opened.each do |q| %>
+          <tr><td><%= link_to q.questions, q %></td></tr>
+        <% end %>
+      </table>
+
+    </div>  
+  </div
+</div>
+
+<div class="media">
+  <div class="media-body">
+    <div class="media-heading">
+
+      <table class="table table-striped">
+        <% @solved.each do |q| %>
+          <tr><td><%= link_to q.questions, q %></td></tr>
+        <% end %>
+      </table>
+
+    </div>  
+  </div
+</div>
