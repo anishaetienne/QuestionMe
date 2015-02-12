@@ -5,7 +5,11 @@
 <p>Status: <%= @questions.status %></p>
 <p>Answers:</p>
 
-        <% @answers.each do |answer| %>
-          <tr><td><%= answer.answers %></td></tr>
-        <% end %>
+  <% if @anyAnswers == false %>
+    <%= "No answers yet!" %>
+  <% else %>
+    <%= @answers.each do |answer| %>
+      <tr><td><%= answer.answers %></td></tr>
+    <% end %>
+  <% end %>
     

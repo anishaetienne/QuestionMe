@@ -1,13 +1,14 @@
 class QuestionsController < ApplicationController
   def index
        @opened = Question.where(status: 'Open').order('id ASC')  
-       @solved = Question.where(status: 'Solved').order('id DESC')
-
+       @solved = Question.where(status: 'Solved').order('id DESC').take(3)
   end
 
   def show
     @questions = Question.find(params[:id])
     @answers = Question.find(params[:id]).answers
+    @anyAnswers = Question.find(params[:id]).answers.exists?
+
 
   end
 

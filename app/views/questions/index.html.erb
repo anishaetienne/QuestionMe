@@ -1,5 +1,4 @@
 
-
 <h2>Open Questions</h2>
 <div class="media">
   <div class="media-body">
@@ -11,12 +10,12 @@
             <h3 class="panel-title"><%= link_to q.questions, q %> &nbsp; &nbsp; &nbsp;<%= link_to "Edit", edit_question_path(q), align:"right" %></h3> 
           </div>
     <div class="panel-body">
-        Answer would go here or form
+        <p></p>
+            
     </div>
   </div>
 
         <% end %>
-      </table>
 
     </div>  
   </div
@@ -26,9 +25,6 @@
 <div class="media">
   <div class="media-body">
     <div class="media-heading">
-
-      
-
   
   <% @solved.each do |q| %>
 
@@ -46,6 +42,8 @@
   </div
 </div>
 
+
+<%= @join %>
 
 
 

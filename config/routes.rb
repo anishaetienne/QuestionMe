@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   get 'about' => 'questionme#about'
 
+  
   root to: 'questionme#index'
 end
