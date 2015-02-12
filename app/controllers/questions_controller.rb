@@ -1,8 +1,12 @@
 class QuestionsController < ApplicationController
+
+  
   def index
        @opened = Question.where(status: 'Open').order('id ASC')  
        @solved = Question.where(status: 'Solved').order('id DESC').take(3)
   end
+
+
 
   def show
     @questions = Question.find(params[:id])
@@ -13,9 +17,13 @@ class QuestionsController < ApplicationController
   end
 
 
+
+
   def new
     @questions = Question.new
   end
+
+
 
 
   def create
@@ -31,11 +39,15 @@ class QuestionsController < ApplicationController
   end
 
 
+
+
   def edit
     @questions = Question.find(params[:id])
     @answers = Question.find(params[:id]).answers
 
   end
+
+
 
 
   def update
